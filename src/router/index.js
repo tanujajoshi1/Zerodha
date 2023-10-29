@@ -1,20 +1,25 @@
+// import { createRouter, Router, createWebHistory } from 'vue-router'
+// import Vue from 'vue'
+
+// Vue.use(Router)
+
+// const routes = [
+  
+// ]
+
+// const router = createRouter({
+//   history: createWebHistory(process.env.BASE_URL),
+//   routes
+// })
+
+// export default router
+
+import { createApp } from 'vue'
+import App from '../components/App.vue' // Adjust the path based on your file structure
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  // Your routes go here
 ]
 
 const router = createRouter({
@@ -22,4 +27,10 @@ const router = createRouter({
   routes
 })
 
-export default router
+const app = createApp(App) // Specify your main component here
+
+app.use(router)
+app.mount('#app') // Make sure to adjust the mount point as needed
+
+export default router;
+
